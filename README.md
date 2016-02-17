@@ -47,7 +47,7 @@ Uso
 Adicione no array de parâmetros um array com as configurações da cron:
 ```
 'cronJobs' =>[
-    'jobs/first' => ['cron' => '* * * * *'],
+    'jobs/first'  => ['cron' => '* * * * *'],
     'jobs/second' => ['cron' => '10 * * * *']
 ]
 ```
