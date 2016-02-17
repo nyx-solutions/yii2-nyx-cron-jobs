@@ -13,7 +13,7 @@
     "php"
   ],
   "license": "Apache-2.0",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "Jonatas Sas",
@@ -27,7 +27,7 @@
   },
   "autoload": {
     "psr-4": {
-      "nox\\console\\controllers\\": "console/"
+      "nox\\console\\controllers\\": "console/controllers/"
     }
   },
   "config": {
