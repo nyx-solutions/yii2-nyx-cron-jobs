@@ -38,7 +38,7 @@ Yii::setAlias('@runnerScript', dirname(dirname(dirname(__FILE__))) .'/yii');
 - **Passo 4:**  Adicione ao agendador de tarefas do seu sistema (cron no unix, agendador de tarefas no windows) para ser executado a todo minuto:
 
 ```sh
-* * * * * /path/to/yii/application/protected/yiic cron
+* * * * * /path/to/yii/yii cron
 ```
 
 Uso
