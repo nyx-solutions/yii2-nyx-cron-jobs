@@ -13,7 +13,7 @@
     "php"
   ],
   "license": "Apache-2.0",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "authors": [
     {
       "name": "Jonatas Sas",
@@ -37,7 +37,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://bitbucket.org/nox-it-solutions/yii2-nox-cron-jobs"
+      "url": "https://bitbucket.org/noxit-plugins/yii2-nox-cron-jobs"
     }
   ]
 }
