@@ -1,33 +1,34 @@
 Yii PHP Framework Version 2 / NOX Cron Jobs
 ===================================================
 
-Yii2 NOX Cron Jobs é um Crontroller para Console do Yii2 e é responsável por executar vários jobs na Crontab (Scripts do Console).
+Yii2 NOX Cron Jobs is a Console Crontroller for Yii2 and is responsible to execute jobs in the Crontab.
 
-Esta é baseada [nesta](https://github.com/DenisOgr/yii2-cronjobs).
+The current extension is based on [DenisOgr/yii2-cronjobs](https://github.com/DenisOgr/yii2-cronjobs).
 
-Instalação
+Installation
 ----------
 
-- **Passo 1:** O melhor método para instalar esta extensao é via [composer](http://getcomposer.org/download/).
+- **Step 1:** The preferred way to install this extension is through [Composer](http://getcomposer.org/download/).
 
-Execute o comando:
-
-```
-php composer.phar require --prefer-dist nox-it/yii2-nox-cron-jobs "1.*"
-```
-
-ou adicione:
+Either run:
 
 ```
-"nox-it/yii2-nox-cron-jobs": "1.*"
+php composer.phar require --prefer-dist nox-it/yii2-nox-cron-jobs "*"
 ```
 
-na seção "require" do seu arquivo `composer.json`.
-- **Passo 2:** Crie o "alias" @runnerScript na configuração do Console. Este é o caminho absoluto do script.
+or add:
+
+```
+"nox-it/yii2-nox-cron-jobs": "*"
+```
+
+to the require section of your `composer.json` file.
+
+- **Step 2:** Set aliase  @runnerScript in console config. This absolutely path to runner script.
 ```
 Yii::setAlias('@runnerScript', dirname(dirname(dirname(__FILE__))) .'/yii');
 ```
-- **Passo 3:** Adicione à configuração:
+- **Step 3:** Add to console config:
 ```
 'controllerMap' => [
        'cron' => [
@@ -35,16 +36,16 @@ Yii::setAlias('@runnerScript', dirname(dirname(dirname(__FILE__))) .'/yii');
        ],
    ],
 ```
-- **Passo 4:**  Adicione ao agendador de tarefas do seu sistema (cron no unix, agendador de tarefas no windows) para ser executado a todo minuto:
+- **Step 4:**  Add task to system scheduler (cron on unix, task scheduler on windows) to run every minute:
 
 ```sh
 * * * * * /path/to/yii/yii cron
 ```
 
-Uso
----
+Usage
+-----
 
-Adicione no array de parâmetros um array com as configurações da cron:
+Add in params array with cron sets:
 ```
 'cronJobs' =>[
     'jobs/first'  => ['cron' => '* * * * *'],
