@@ -13,7 +13,7 @@
     "php"
   ],
   "license": "Apache-2.0",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "authors": [
     {
       "name": "Jonatas Sas",
@@ -22,9 +22,8 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "yiisoft/yii2": "2.*",
-    "nox-it/yii2-nox": "1.*",
-    "php": ">=5.4.0"
+    "php": ">=5.4.0",
+    "nox-it/yii2-nox": "1.*"
   },
   "autoload": {
     "psr-4": {
