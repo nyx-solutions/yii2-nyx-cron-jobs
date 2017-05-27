@@ -1,4 +1,4 @@
-Copyright (c) 2017, Jonatas Sas & Luis Carlos Meireles
+Copyright (c) 2017, Jonatas Sas
 
 All rights reserved.
 
@@ -12,7 +12,7 @@ are permitted provided that the following conditions are met:
   list of conditions and the following disclaimer in the documentation and/or
   other materials provided with the distribution.
 
-* Neither the names of Jonatas Sas or Luis Carlos Meireles nor the names of its
+* Neither the names of Jonatas Sas or jSAS nor the names of its
   contributors may be used to endorse or promote products derived from
   this software without specific prior written permission.
 
