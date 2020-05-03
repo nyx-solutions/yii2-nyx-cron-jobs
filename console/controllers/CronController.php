@@ -19,17 +19,17 @@
         /**
          * @var string PHPDoc tag prefix for using by PHPDocCrontab extension.
          */
-        public $tagPrefix = 'cron';
+        public string $tagPrefix = 'cron';
 
         /**
          * @var string PHP interpriter path (if empty, path will be checked automaticly)
          */
-        public $interpreterPath = null;
+        public ?string $interpreterPath = null;
 
         /**
          * @var string path to writing logs
          */
-        public $logsDir = null;
+        public ?string $logsDir = null;
 
         /**
          * Update or rewrite log file
@@ -37,7 +37,7 @@
          *
          * @var bool
          */
-        public $updateLogFile = false;
+        public bool $updateLogFile = false;
 
         /**
          * Placeholders:
@@ -49,43 +49,36 @@
          *
          * @var string mask log file name
          */
-        public $logFileName = '%L/%C.%A.log';
+        public string $logFileName = '%L/%C.%A.log';
 
         /**
          * @var string Bootstrap script path (if empty, current command runner will be used)
          */
-        public $bootstrapScript = null;
+        public ?string $bootstrapScript = null;
 
         /**
          * @var string Timestamp used as current datetime
          * @see http://php.net/manual/en/function.strtotime.php
          */
-        public $timestamp = 'now';
-
-        /**
-         * @var string the name of the default action. Defaults to 'run'.
-         */
-        public $defaultAction = 'run';
+        public string $timestamp = 'now';
 
         /**
          * @inheritdoc
          */
         public function init()
         {
+            $this->defaultAction = 'run';
+
             parent::init();
 
-            //Checking PHP interpriter path
             if ($this->interpreterPath === null) {
                 if ($this->isWindowsOS()) {
-                    //Windows OS
                     $this->interpreterPath = 'php.exe';
                 } else {
-                    //nix based OS
                     $this->interpreterPath = '/usr/bin/env php';
                 }
             }
 
-            //Checking logs directory
             if ($this->logsDir === null) {
                 $this->logsDir = Yii::$app->getRuntimePath();
             }
@@ -103,7 +96,7 @@
          */
         public function getHelp()
         {
-            $commandUsage = Yii::getAlias('@runnerScript').' '.$this->getName();
+            $commandUsage = Yii::getAlias('@runnerScript').' '.$this->id;
 
             return <<<RAW
 Usage: {$commandUsage} <action>
@@ -145,7 +138,7 @@ RAW;
                 [0, 6],  //Weekdays
             ];
             foreach ($parameters AS $n => &$repeat) {
-                list($repeat, $every) = explode('\\', $repeat, 2) + [false, 1];
+                [$repeat, $every] = explode('\\', $repeat, 2) + [false, 1];
                 if ($repeat === '*') {
                     $repeat = range($dimensions[$n][0], $dimensions[$n][1]);
                 } else {
@@ -245,7 +238,7 @@ RAW;
          *
          * @param array $args List of run-tags to running actions (if empty, only "default" run-tag will be runned).
          *
-         * @throws Exception
+         * @throws Exception|ErrorException
          */
         public function actionRun($args = [])
         {
@@ -307,6 +300,8 @@ RAW;
          * Show actions associated with {@link PHPDocCrontab} runner.
          *
          * @param $args array List of run-tags for filtering action list (if empty, show all).
+         *
+         * @throws ErrorException
          */
         public function actionView($args = [])
         {
@@ -328,15 +323,19 @@ RAW;
 
         /**
          * @param string $pattern
-         * @param string $task
+         * @param array  $task
          *
          * @return mixed
          */
-        protected function formatFileName($pattern, $task)
+        protected function formatFileName(string $pattern, array $task)
         {
             $pattern = str_replace(['%L', '%C', '%A', '%P'], [$this->logsDir, $task['command'], $task['action'], getmypid()], $pattern);
 
-            return preg_replace_callback('#%D\((.+)\)#U', create_function('$str', 'return date($str[1]);'), $pattern);
+            return preg_replace_callback(
+                '#%D\((.+)\)#U',
+                fn ($str) => date($str[1]),
+                $pattern
+            );
         }
 
         /**
@@ -353,6 +352,8 @@ RAW;
          * @return array List of command actions associated with {@link PHPDocCrontab} runner.
          *
          * @throws ErrorException
+         *
+         * @noinspection PhpRedundantCatchClauseInspection
          */
         protected function prepareActions()
         {
