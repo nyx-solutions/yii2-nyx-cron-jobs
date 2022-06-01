@@ -1,6 +1,6 @@
 <?php
 
-    namespace nox\console\controllers;
+    namespace nyx\console\controllers;
 
     use Yii;
     use yii\base\ErrorException;
@@ -10,7 +10,7 @@
     /**
      * Class CronController
      *
-     * @package nox\console\controllers
+     * @package nyx\console\controllers
      */
     class CronController extends Controller
     {

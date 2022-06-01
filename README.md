@@ -5,13 +5,13 @@ Yii2 NOX Cron Jobs is a Console Crontroller for Yii2 and is responsible to execu
 
 The current extension is based on [DenisOgr/yii2-cronjobs](https://github.com/DenisOgr/yii2-cronjobs).
 
-[![Latest Stable Version](https://poser.pugx.org/nox-it/yii2-nox-cron-jobs/v/stable)](https://packagist.org/packages/nox-it/yii2-nox-cron-jobs)
-[![Total Downloads](https://poser.pugx.org/nox-it/yii2-nox-cron-jobs/downloads)](https://packagist.org/packages/nox-it/yii2-nox-cron-jobs)
-[![Latest Unstable Version](https://poser.pugx.org/nox-it/yii2-nox-cron-jobs/v/unstable)](https://packagist.org/packages/nox-it/yii2-nox-cron-jobs)
-[![License](https://poser.pugx.org/nox-it/yii2-nox-cron-jobs/license)](https://packagist.org/packages/nox-it/yii2-nox-cron-jobs)
-[![Monthly Downloads](https://poser.pugx.org/nox-it/yii2-nox-cron-jobs/d/monthly)](https://packagist.org/packages/nox-it/yii2-nox-cron-jobs)
-[![Daily Downloads](https://poser.pugx.org/nox-it/yii2-nox-cron-jobs/d/daily)](https://packagist.org/packages/nox-it/yii2-nox-cron-jobs)
-[![composer.lock](https://poser.pugx.org/nox-it/yii2-nox-cron-jobs/composerlock)](https://packagist.org/packages/nox-it/yii2-nox-cron-jobs)
+[![Latest Stable Version](https://poser.pugx.org/nyx-solutions/yii2-nyx-cron-jobs/v/stable)](https://packagist.org/packages/nyx-solutions/yii2-nyx-cron-jobs)
+[![Total Downloads](https://poser.pugx.org/nyx-solutions/yii2-nyx-cron-jobs/downloads)](https://packagist.org/packages/nyx-solutions/yii2-nyx-cron-jobs)
+[![Latest Unstable Version](https://poser.pugx.org/nyx-solutions/yii2-nyx-cron-jobs/v/unstable)](https://packagist.org/packages/nyx-solutions/yii2-nyx-cron-jobs)
+[![License](https://poser.pugx.org/nyx-solutions/yii2-nyx-cron-jobs/license)](https://packagist.org/packages/nyx-solutions/yii2-nyx-cron-jobs)
+[![Monthly Downloads](https://poser.pugx.org/nyx-solutions/yii2-nyx-cron-jobs/d/monthly)](https://packagist.org/packages/nyx-solutions/yii2-nyx-cron-jobs)
+[![Daily Downloads](https://poser.pugx.org/nyx-solutions/yii2-nyx-cron-jobs/d/daily)](https://packagist.org/packages/nyx-solutions/yii2-nyx-cron-jobs)
+[![composer.lock](https://poser.pugx.org/nyx-solutions/yii2-nyx-cron-jobs/composerlock)](https://packagist.org/packages/nyx-solutions/yii2-nyx-cron-jobs)
 
 ## Installation
 
@@ -20,13 +20,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 * Either run
 
 ```bash
-php composer.phar require --prefer-dist "nox-it/yii2-nox-cron-jobs" "*"
+php composer.phar require --prefer-dist "nyx-solutions/yii2-nyx-cron-jobs" "*"
 ```
 
 or add
 
 ```json
-"nox-it/yii2-nox-cron-jobs": "*"
+"nyx-solutions/yii2-nyx-cron-jobs": "*"
 ```
 
 to the `require` section of your application's `composer.json` file.
@@ -44,7 +44,7 @@ Yii::setAlias('@runnerScript', dirname(dirname(dirname(__FILE__))) .'/yii');
 ```
 'controllerMap' => [
        'cron' => [
-           'class' => 'nox\console\controllers\CronController'
+           'class' => 'nyx\console\controllers\CronController'
        ],
    ],
 ```
@@ -67,6 +67,6 @@ Add in params array with cron sets:
 
 ## License
 
-**yii2-nox-cron-jobs** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.
+**yii2-nyx-cron-jobs** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.
 
 ![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)

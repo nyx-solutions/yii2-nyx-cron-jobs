@@ -1,10 +1,10 @@
 {
-  "name": "nox-it/yii2-nox-cron-jobs",
-  "description": "Yii2 NOX Cron Jobs",
+  "name": "nyx-solutions/yii2-nyx-cron-jobs",
+  "description": "Yii2 nyx Cron Jobs",
   "type": "library",
   "keywords": ["yii2", "extension", "console", "cron", "jobs", "cron jobs", "framework", "php"],
   "license": "BSD-3-Clause",
-  "version": "2.0.0",
+  "version": "4.0.0",
   "authors": [
     {
       "name": "Jonatas Sas",
@@ -14,11 +14,11 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=7.4.0",
-    "nox-it/yii2-nox": "~2.0.0"
+    "nyx-solutions/yii2-nyx": "~2.0.0"
   },
   "autoload": {
     "psr-4": {
-      "nox\\console\\controllers\\": "console/controllers/"
+      "nyx\\console\\controllers\\": "console/controllers/"
     }
   },
   "config": {
@@ -31,7 +31,7 @@
     },
     {
       "type": "vcs",
-      "url": "https://github.com/nox-it/yii2-nox-cron-jobs"
+      "url": "https://github.com/nyx-solutions/yii2-nyx-cron-jobs"
     }
   ]
 }
