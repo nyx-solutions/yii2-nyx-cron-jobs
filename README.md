@@ -1,7 +1,7 @@
-Yii PHP Framework Version 2 / NOX Cron Jobs
+Yii PHP Framework Version 2 / NYX Cron Jobs
 ===================================================
 
-Yii2 NOX Cron Jobs is a Console Crontroller for Yii2 and is responsible to execute jobs in the Crontab.
+Yii2 NYX Cron Jobs is a Console Crontroller for Yii2 and is responsible to execute jobs in the Crontab.
 
 The current extension is based on [DenisOgr/yii2-cronjobs](https://github.com/DenisOgr/yii2-cronjobs).
 
